@@ -8,7 +8,7 @@ Job application submission
 1. Open Project in Visual Studio
 2. Click Run
 
-# How to run vanilla JS
+# How to run with Node JS
 1. Open a command terminal
 2. Change directory to path/to/banzai/ClientApp
 3. run command `npm install`
