@@ -25,3 +25,11 @@
     font-weight: 900;
     line-height: 0.8em;
 }
+
+a {
+    color: #148cd6;
+}
+
+.blue-item {
+    --border-color: #148cd6;
+}

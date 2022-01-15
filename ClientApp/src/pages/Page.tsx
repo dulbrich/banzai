@@ -1,5 +1,5 @@
-import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
-import { arrowForwardOutline, happyOutline } from 'ionicons/icons';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
+import { addCircleOutline, arrowForwardOutline, happyOutline } from 'ionicons/icons';
 import React from 'react';
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
@@ -29,7 +29,7 @@ const Page: React.FC = () => {
                                 <IonButton mode="ios">Help</IonButton>
                             </>
                         )}
-                        <IonButton mode="ios" fill="solid" color="secondary" shape="round" style={{ width: "80px" }}>Login</IonButton>
+                        <IonButton mode="ios" fill="solid" color="blue" shape="round" style={{ width: "80px" }}>Login</IonButton>
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
@@ -62,8 +62,8 @@ const Page: React.FC = () => {
                                         </IonLabel>
                                     </IonItem>
                                 </IonList>
-                                <div className="ion-padding" style={{paddingTop: "70px", paddingBottom: "70px"}}>
-                                    <IonButton color="secondary" size="large">
+                                <div className="ion-padding" style={{ paddingTop: "70px", paddingBottom: "70px" }}>
+                                    <IonButton color="blue" size="large">
                                         <IonLabel className="bold-text">Schedule A Demo <IonIcon icon={arrowForwardOutline} /></IonLabel>
                                     </IonButton>
                                     <br />
@@ -80,19 +80,17 @@ const Page: React.FC = () => {
                     </IonGrid>
                 </div>
                 {/*BOTTOM BOX*/}
-                <div style={{ width: "100%", paddingLeft: isDesktop ? "80px" : "", paddingTop: "70px", paddingRight: "80px" }}>
+                <div style={{ width: "100%", paddingLeft: isDesktop ? "80px" : "", paddingTop: "70px", paddingRight: isDesktop ? "80px" : "" }}>
                     <IonGrid>
                         {/*BENEFITS OF BONZAI ROW*/}
                         <IonRow>
-                            <IonCol size="4" />
-                            <IonCol size="4">
+                            <IonCol size="12" >
                                 <div style={{ textAlign: "center" }}>
                                     <div style={{ borderStyle: "solid", borderWidth: "4px", padding: "10px", width: "250px", display: "table", margin: "0 auto" }}>
                                         <IonLabel className="bold-text"><strong>BENEFITS OF BONZAI</strong></IonLabel>
                                     </div>
                                 </div>
                             </IonCol>
-                            <IonCol size="4" />
                         </IonRow>
                         {/*FOUR REASONS ROW*/}
                         <IonRow>
@@ -100,25 +98,25 @@ const Page: React.FC = () => {
                                 <IonRow><IonText><h1><IonIcon icon={happyOutline} /></h1></IonText></IonRow>
                                 <IonRow><IonText className="lemon">EMPLOYEE SATISFACTION</IonText></IonRow>
                                 <IonRow>&nbsp;</IonRow>
-                                <IonRow><IonText style={{fontWeight: "600"}} color="medium">Lorem <a color="secondary">ipsum dolor</a> sit amet, consectetur adipiscing elit.</IonText></IonRow>
+                                <IonRow><IonText style={{fontWeight: "600"}} color="medium">Lorem <a color="blue">ipsum dolor</a> sit amet, consectetur adipiscing elit.</IonText></IonRow>
                             </IonCol>
                             <IonCol size="12" size-lg="3" className="ion-padding">
                                 <IonRow><IonText><h1><IonIcon icon={happyOutline} /></h1></IonText></IonRow>
                                 <IonRow><IonText className="lemon">2 MILLION USERS</IonText></IonRow>
                                 <IonRow>&nbsp;</IonRow>
-                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="secondary">ipsum dolor</a> sit amet, consectetur adipiscing elit. Vivamus tincidunt erat non sollicitudin <a color="secondary">ultricies.</a></IonText></IonRow>
+                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="blue">ipsum dolor</a> sit amet, consectetur adipiscing elit. Vivamus tincidunt erat non sollicitudin <a color="secondary">ultricies.</a></IonText></IonRow>
                             </IonCol>
                             <IonCol size="12" size-lg="3" className="ion-padding">
                                 <IonRow><IonText><h1><IonIcon icon={happyOutline} /></h1></IonText></IonRow>
                                 <IonRow><IonText className="lemon">100+ RESOURCES</IonText></IonRow>
                                 <IonRow>&nbsp;</IonRow>
-                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="secondary">ipsum dolor</a>. Nulla non urna sed velit feugiat ornare. Maecenas auctor posuere <a color="secondary">ullamcorper</a>. </IonText></IonRow>
+                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="blue">ipsum dolor</a>. Nulla non urna sed velit feugiat ornare. Maecenas auctor posuere <a color="secondary">ullamcorper</a>. </IonText></IonRow>
                             </IonCol>
                             <IonCol size="12" size-lg="3" className="ion-padding">
                                 <IonRow><IonText><h1><IonIcon icon={happyOutline} /></h1></IonText></IonRow>
                                 <IonRow><IonText className="lemon">EARN REWARDS</IonText></IonRow>
                                 <IonRow>&nbsp;</IonRow>
-                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="secondary">ipsum dolor</a> sit amet.</IonText></IonRow>
+                                <IonRow><IonText style={{ fontWeight: "600" }} color="medium">Lorem <a color="blue">ipsum dolor</a> sit amet.</IonText></IonRow>
                             </IonCol>
                         </IonRow>
                         {/*WHY FINANCIAL LITERACY ROW*/}
@@ -126,12 +124,54 @@ const Page: React.FC = () => {
                             <IonLabel className="large-text-font" style={{fontSize: "42px", fontWeight: "500"}}>Why financial literacy? Talk about producivity, health, well-being, empowerment, enjoyment, attendance, real-life application etc.</IonLabel>
                         </IonRow>
                         <IonRow>&nbsp;</IonRow>
-                        <IonRow>
-                            <IonButton color="secondary" size="large">
+                        <IonRow className="ion-padding">
+                            <IonButton color="blue" size="large">
                                 <IonLabel className="bold-text">Get Started <IonIcon icon={arrowForwardOutline} /></IonLabel>
                             </IonButton>
                         </IonRow>
                     </IonGrid>
+                    {/*FAQ QUESTIONS*/}
+                    <IonList>
+                        <IonItem lines="full" className="blue-item"></IonItem>
+                        <IonAccordionGroup>
+                            <IonAccordion value="topics" toggleIcon={addCircleOutline}>
+                                <IonItem slot="header" className="blue-item">
+                                    <IonLabel className="ion-text-wrap small-text-font" color="blue" style={{fontSize: "20px", fontWeight: "600"}}>What topics are included in the Wellness Center?</IonLabel>
+                                </IonItem>
+                                <IonList slot="content">
+                                    <IonItem className="blue-item" lines="full">
+                                        <IonLabel className="ion-text-wrap" style={{fontSize: "20px"}}>
+                                            Proin posuere ullamcorper placerat. Mauris a felis molestie, tristique orci sit amet, sagittis ex. Etiam blandit sagittis metus eu pellentesque. Sed volutpat dolor non risus bibendum, non volutpat risus scelerisque. Pellentesque elementum eros et viverra sodales. Morbi finibus nisi sed velit euismod molestie. Nulla rutrum accumsan malesuada. Sed vitae metus augue. Praesent efficitur dolor mattis ligula hendrerit hendrerit. Integer ac turpis ultrices magna viverra laoreet. Ut at arcu arcu. Vestibulum at mi massa.
+                                        </IonLabel>
+                                    </IonItem>
+                                </IonList>
+                            </IonAccordion>
+                            <IonAccordion value="literacy" toggleIcon={addCircleOutline}>
+                                <IonItem slot="header" className="blue-item" lines="full">
+                                    <IonLabel className="ion-text-wrap" color="blue" style={{ fontSize: "20px", fontWeight: "600" }}>Why is financial literacy important?</IonLabel>
+                                </IonItem>
+                                <IonList slot="content">
+                                    <IonItem className="blue-item" lines="full">
+                                        <IonLabel className="ion-text-wrap" style={{ fontSize: "20px" }}>
+                                            Proin posuere ullamcorper placerat. Mauris a felis molestie, tristique orci sit amet, sagittis ex. Etiam blandit sagittis metus eu pellentesque. Sed volutpat dolor non risus bibendum, non volutpat risus scelerisque. Pellentesque elementum eros et viverra sodales. Morbi finibus nisi sed velit euismod molestie. Nulla rutrum accumsan malesuada. Sed vitae metus augue. Praesent efficitur dolor mattis ligula hendrerit hendrerit. Integer ac turpis ultrices magna viverra laoreet. Ut at arcu arcu. Vestibulum at mi massa.
+                                        </IonLabel>
+                                    </IonItem>
+                                </IonList>
+                            </IonAccordion>
+                            <IonAccordion value="partnership" toggleIcon={addCircleOutline}>
+                                <IonItem slot="header" className="blue-item">
+                                    <IonLabel className="ion-text-wrap" color="blue" style={{ fontSize: "20px", fontWeight: "600" }}>What does a partnership with Banzai look like?</IonLabel>
+                                </IonItem>
+                                <IonList slot="content">
+                                    <IonItem className="blue-item" lines="full">
+                                        <IonLabel className="ion-text-wrap" style={{ fontSize: "20px" }}>
+                                            Proin posuere ullamcorper placerat. Mauris a felis molestie, tristique orci sit amet, sagittis ex. Etiam blandit sagittis metus eu pellentesque. Sed volutpat dolor non risus bibendum, non volutpat risus scelerisque. Pellentesque elementum eros et viverra sodales. Morbi finibus nisi sed velit euismod molestie. Nulla rutrum accumsan malesuada. Sed vitae metus augue. Praesent efficitur dolor mattis ligula hendrerit hendrerit. Integer ac turpis ultrices magna viverra laoreet. Ut at arcu arcu. Vestibulum at mi massa.
+                                        </IonLabel>
+                                    </IonItem>
+                                </IonList>
+                            </IonAccordion>
+                        </IonAccordionGroup>
+                    </IonList>
                 </div>
             </IonContent>
         </IonPage>
