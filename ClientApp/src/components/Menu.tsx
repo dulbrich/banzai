@@ -8,12 +8,14 @@ import {
     IonMenu,
     IonMenuToggle,
     IonNote,
+    IonTitle,
     isPlatform,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, businessOutline, businessSharp, cashOutline, cashSharp, desktopOutline, desktopSharp, heartOutline, heartSharp, helpCircleOutline, helpCircleSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, schoolOutline, schoolSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
+import React from 'react';
 
 interface AppPage {
     url: string;
@@ -25,31 +27,31 @@ interface AppPage {
 const appPages: AppPage[] = [
     {
         title: 'Teachers & Students',
-        url: '/page/Inbox',
+        url: '/home/teachers-students',
         iosIcon: schoolOutline,
         mdIcon: schoolSharp
     },
     {
         title: 'Banks & Credit Unions',
-        url: '/page/Outbox',
+        url: '/home/banks',
         iosIcon: cashOutline,
         mdIcon: cashSharp
     },
     {
         title: 'Businesses & Benefits',
-        url: '/page/Favorites',
+        url: '/home/benefits',
         iosIcon: businessOutline,
         mdIcon: businessSharp
     },
     {
         title: 'Blog',
-        url: '/page/Archived',
+        url: '/home/blog',
         iosIcon: desktopOutline,
         mdIcon: desktopSharp
     },
     {
         title: 'Help',
-        url: '/page/Trash',
+        url: '/home/help',
         iosIcon: helpCircleOutline,
         mdIcon: helpCircleSharp
     },
@@ -63,8 +65,11 @@ const Menu: React.FC = () => {
         <IonMenu contentId="main" type="overlay" disabled={isDesktop}>
             <IonContent>
                 <IonList id="inbox-list">
-                    <IonListHeader>Inbox</IonListHeader>
-                    <IonNote>hi@ionicframework.com</IonNote>
+                    <IonItem routerLink="/home">
+                        <IonTitle>
+                            <img src="/assets/images/banzai.png" alt="Banzai! logo" />
+                        </IonTitle>
+                    </IonItem>
                     {appPages.map((appPage, index) => {
                         return (
                             <IonMenuToggle key={index} autoHide={false}>
