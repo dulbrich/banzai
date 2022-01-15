@@ -13,3 +13,6 @@ Job application submission
 2. Change directory to path/to/banzai/ClientApp
 3. run command `npm install`
 4. run command `npm start`
+
+# Notes
+1. Refresh the page when changing screen size - small bug for now.
