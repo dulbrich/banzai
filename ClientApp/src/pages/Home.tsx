@@ -1,11 +1,13 @@
-import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonModal, IonPage, IonRow, IonText, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
 import { addCircleOutline, arrowForwardOutline, happyOutline } from 'ionicons/icons';
-import React from 'react';
+import React, { useState } from 'react';
+import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
 const Home: React.FC = () => {
 
     //const { name } = useParams<{ name: string; }>();
+    const [showModal, setShowModal] = useState(false);
     const isDesktop = isPlatform('desktop');
     return (
         <IonPage>
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
                                 <IonButton mode="ios" routerLink="/home/help">Help</IonButton>
                             </>
                         )}
-                        <IonButton mode="ios" fill="solid" color="blue" shape="round" style={{ width: "80px" }}>Login</IonButton>
+                        <IonButton mode="ios" fill="solid" color="blue" shape="round" style={{ width: "80px" }} onClick={() => setShowModal(true)}>Login</IonButton>
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
@@ -61,7 +63,7 @@ const Home: React.FC = () => {
                                     </IonItem>
                                 </IonList>
                                 <div className="ion-padding" style={{ paddingTop: "70px", paddingBottom: "70px" }}>
-                                    <IonButton color="blue" size="large">
+                                    <IonButton color="blue" size="large" onClick={() => setShowModal(true)}>
                                         <IonLabel className="bold-text">Schedule A Demo <IonIcon icon={arrowForwardOutline} /></IonLabel>
                                     </IonButton>
                                     <br />
@@ -123,7 +125,7 @@ const Home: React.FC = () => {
                         </IonRow>
                         <IonRow>&nbsp;</IonRow>
                         <IonRow className="ion-padding">
-                            <IonButton color="blue" size="large">
+                            <IonButton color="blue" size="large" onClick={() => setShowModal(true)}>
                                 <IonLabel className="bold-text">Get Started <IonIcon icon={arrowForwardOutline} /></IonLabel>
                             </IonButton>
                         </IonRow>
@@ -171,6 +173,9 @@ const Home: React.FC = () => {
                         </IonAccordionGroup>
                     </IonList>
                 </div>
+                <IonModal isOpen={showModal} onDidDismiss={() => setShowModal(false)}>
+                    <ExploreContainer name="demo" />
+                </IonModal>
             </IonContent>
         </IonPage>
     );
