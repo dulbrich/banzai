@@ -20,11 +20,11 @@ const Home: React.FC = () => {
                     <IonButtons slot="end" className="ion-padding">
                         {isDesktop && (
                             <>
-                                <IonButton mode="ios">Teachers & Students</IonButton>
-                                <IonButton mode="ios">Banks & Credit Unions</IonButton>
-                                <IonButton mode="ios">Businesses & Benefits</IonButton>
-                                <IonButton mode="ios">Blog</IonButton>
-                                <IonButton mode="ios">Help</IonButton>
+                                <IonButton mode="ios" routerLink="/home/teachers-students">Teachers & Students</IonButton>
+                                <IonButton mode="ios" routerLink="/home/banks">Banks & Credit Unions</IonButton>
+                                <IonButton mode="ios" routerLink="/home/benefits">Businesses & Benefits</IonButton>
+                                <IonButton mode="ios" routerLink="/home/blog">Blog</IonButton>
+                                <IonButton mode="ios" routerLink="/home/help">Help</IonButton>
                             </>
                         )}
                         <IonButton mode="ios" fill="solid" color="blue" shape="round" style={{ width: "80px" }}>Login</IonButton>
